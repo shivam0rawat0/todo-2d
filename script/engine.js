@@ -50,8 +50,8 @@ function create() {
     ])
         .add($("div", [
             "class=anchor",
-            "onmousedown=dragOn(event," + taskId + ")",
-            "onmouseup=dragOn(event," + taskId + ")"
+            "ontouchstart=dragOn(event," + taskId + ")",
+            "ontouchend=dragOn(event," + taskId + ")"
         ]))
         .add($("input",
             [
@@ -85,8 +85,8 @@ function dragOn(evt, tid) {
 function drag(evt) {
     last = false;
     if (element != null) {
-        element.style.top = (evt.clientY - 15) + "px";
-        element.style.left = (evt.clientX - 15) + "px";
+        element.style.top = (Number(evt.touches[0].clientY.toString().split('.')[0]) - 15) + "px";
+        element.style.left = (Number(evt.touches[0].clientX.toString().split('.')[0]) - 15) + "px";
     }
 }
 
