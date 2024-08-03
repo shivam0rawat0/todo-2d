@@ -64,7 +64,7 @@ function create() {
 }
 
 
-function createBody() {
+function bodyCreate() {
     if (evt.keyCode === 61) {
         create();
     }
