@@ -1,0 +1,42 @@
+.g{
+    background-color: rgb(175, 240, 151);
+}
+.ga{
+    background-color: rgb(72, 181, 32);
+}
+
+.b{
+    background-color: rgb(237, 155, 138);
+}
+.ba{
+    background-color: rgb(168, 51, 28);
+}
+
+.m{
+    background-color: rgb(248, 252, 159);
+}
+.ma{
+    background-color: rgb(189, 197, 26);
+}
+
+.n{
+    background-color: rgb(167, 213, 242);
+}
+.na{
+    background-color: rgb(21, 95, 141);
+}
+
+.sm{
+    height: 100px;
+    width: 100px;
+}
+
+.lh{
+    height: 100px;
+    width: 200px;
+}
+
+.lv{
+    height: 200px;
+    width: 100px;
+}
