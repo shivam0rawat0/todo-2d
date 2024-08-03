@@ -16,7 +16,7 @@ function init() {
 }
 
 function attachInput(tid) {
-    if(!last){
+    if (!last) {
         activeTask = taskList[tid];
         input = activeTask.childNodes[1];
         input.style.display = "block";
@@ -29,10 +29,10 @@ function setInput(e) {
         var content = input.value;
         if (content.length !== 0) {
             content = content.split(":");
-            if(content.length > 1){
-                activeTask.setAttribute("class","mission " + content[0]);
+            if (content.length > 1) {
+                activeTask.setAttribute("class", "mission " + content[0]);
                 var astate = content[0].split(" ")[0];
-                activeTask.childNodes[0].setAttribute("class","anchor " + astate + "a");
+                activeTask.childNodes[0].setAttribute("class", "anchor " + astate + "a");
                 activeTask.childNodes[2].innerHTML = content[1];
             } else {
                 activeTask.childNodes[2].innerHTML = content;
@@ -42,26 +42,31 @@ function setInput(e) {
     }
 }
 
-function create(evt) {
-    if (evt.keyCode === 61) {
-        taskList[++taskId] = $("div", [
-            "id=" + taskId,
-            "class=mission",
-            "onclick=attachInput(" + taskId + ")",
-        ])
-            .add($("div", [
-                "class=anchor",
-                "onmousedown=dragOn(event," + taskId + ")",
-                "onmouseup=dragOn(event," + taskId + ")"
+function create() {
+    taskList[++taskId] = $("div", [
+        "id=" + taskId,
+        "class=mission",
+        "onclick=attachInput(" + taskId + ")",
+    ])
+        .add($("div", [
+            "class=anchor",
+            "onmousedown=dragOn(event," + taskId + ")",
+            "onmouseup=dragOn(event," + taskId + ")"
+        ]))
+        .add($("input",
+            [
+                "class=input",
+                "onkeypress=setInput(event)"
             ]))
-            .add($("input",
-                [
-                    "class=input",
-                    "onkeypress=setInput(event)"
-                ]))
-            .add($("h3", ["innerHTML=" + taskId, "class=content"]))
-            .get();
-        board.appendChild(taskList[taskId]);
+        .add($("h3", ["innerHTML=" + taskId, "class=content"]))
+        .get();
+    board.appendChild(taskList[taskId]);
+}
+
+
+function createBody() {
+    if (evt.keyCode === 61) {
+        create();
     }
 }
 
@@ -80,8 +85,8 @@ function dragOn(evt, tid) {
 function drag(evt) {
     last = false;
     if (element != null) {
-        element.style.top = (evt.clientY-15) + "px";
-        element.style.left = (evt.clientX-15) + "px";
+        element.style.top = (evt.clientY - 15) + "px";
+        element.style.left = (evt.clientX - 15) + "px";
     }
 }
 
