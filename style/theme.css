@@ -4,7 +4,7 @@ html{
 }
 
 body{
-    background-color: rgb(49, 51, 52);
+    background-color: rgb(128, 129, 129);
 }
 
 .mission{
@@ -44,7 +44,9 @@ body{
     left:5%;
     height: 100%;
     width: 90%;
+    padding-top: 10px;
     text-align: center;
     font-weight: bold;
+    font-family: 'Courier New', monospace;
     color:rgb(42, 38, 38);
 }

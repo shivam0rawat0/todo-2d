@@ -61,13 +61,6 @@ function create() {
     board.appendChild(taskList[taskId]);
 }
 
-
-function bodyCreate() {
-    if (evt.keyCode === 61) {
-        create();
-    }
-}
-
 function dragOn(evt, tid) {
     if (element == null) {
         element = taskList[tid];
