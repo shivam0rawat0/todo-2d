@@ -2,7 +2,6 @@ var board;
 var taskId, taskList;
 var activeTask, input;
 var element;
-var monitor;
 var last;
 var isBinOn;
 
@@ -10,7 +9,6 @@ function init() {
     isBinOn = false;
     element = null;
     board = document.body;
-    //monitor = document.getElementById("monitor");
     taskId = -1;
     taskList = [];
 }
@@ -72,11 +70,9 @@ function bodyCreate() {
 
 function dragOn(evt, tid) {
     if (element == null) {
-        //monitor.innerHTML = tid;
         element = taskList[tid];
     } else {
         element = null;
-        //monitor.innerHTML = "null"
         last = true;
     }
     evt.stopPropagation()
