@@ -32,8 +32,22 @@ function setInput(e) {
                 var astate = content[0].split(" ")[0];
                 activeTask.childNodes[0].setAttribute("class", "anchor " + astate + "a");
                 activeTask.childNodes[2].innerHTML = content[1];
+                parts = content[1].split(" ");
+                for(part in parts){
+                    if(cmap[part] != undefined){
+                        activeTask.style.color = cmap[part];
+                        break;
+                    }
+                }
             } else {
                 activeTask.childNodes[2].innerHTML = content;
+                parts = content.split(" ");
+                for(part in parts){
+                    if(cmap[part] != undefined){
+                        activeTask.style.color = cmap[part];
+                        break;
+                    }
+                }
             }
         }
         input.style.display = "none";
